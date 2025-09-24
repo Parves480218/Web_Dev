@@ -1,0 +1,50 @@
+/*
+Author: Parves Mosharof Imran 
+Date: 2025-09-24 
+*/
+
+body {
+    background-color: rgb(96, 186, 186);
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: black;
+    font-size: 36px;
+}
+
+h2 {
+    color: black;
+    font-size: 28px;
+}
+
+p {
+    color: black;
+}
+
+ul li {
+    list-style: square;
+    color: darkblue;
+    t
+    
+}
+
+ol li {
+    list-style-type: decimal;
+    color: darkblue;
+}
+
+a {
+    color: rgb(97, 87, 92);
+    background-color: rgb(237, 237, 214);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: pink;
+    color: white;
+}

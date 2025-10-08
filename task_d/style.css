@@ -1,0 +1,58 @@
+/*
+Author: Parves Mosharof Imran
+Date: 2025-10-08
+*/
+
+
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+}
+
+
+#special-message {
+  background-color: lightyellow;
+  border: 2px solid goldenrod;
+  padding: 10px;
+  font-weight: bold;
+}
+
+
+.box {
+  background-color: #e0f7fa;
+  padding: 15px;
+  border: 1px solid #0097a7;
+}
+
+.highlight {
+  background-color: #fff3e0;
+  padding: 15px;
+  border: 1px solid #ff9800;
+}
+
+
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+
+
+section ul li {
+  color: darkgreen;
+  font-style: italic;
+}
+
+
+a[target="_blank"] {
+  color: red;
+  text-decoration: underline;
+}
+
+img[alt] {
+  border: 3px solid purple;
+  width: 150px;
+}

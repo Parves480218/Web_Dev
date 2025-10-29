@@ -1,6 +1,6 @@
 // index.js
-// Author: Ville Heikkiniemi
-// Date: 2025-10-06
+// Author: parves mosharof imran
+// Date: 2025-10-15
 // Handles adding new course rows with day marks (✅/❌)
 
 document.addEventListener("DOMContentLoaded", () => {

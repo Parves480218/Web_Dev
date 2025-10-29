@@ -1,50 +1,56 @@
 // index.js
 // Author: Ville Heikkiniemi
 // Date: 2025-10-06
-// Handles adding new course rows with day marks (✅/❌)
+// Handles registration form submission with validation
 
 document.addEventListener("DOMContentLoaded", () => {
-  const CHECK = '✅';
-  const CROSS = '❌';
-  const dayOrder = ["Mon", "Tue", "Wed", "Thu" ,"Fri"]; // Define the order of days
-
   const form = document.getElementById("addCourseForm");
-  const table = document.getElementById("timetable").querySelector("tbody");
-  const courseInput = document.getElementById("courseName");
+  const tableBody = document.querySelector("#timetable tbody");
+  const errorDiv = document.getElementById("errorMessages");
+  const timestampInput = document.getElementById("timestamp");
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    errorDiv.innerHTML = "";
+    let errors = [];
 
-    const courseName = courseInput.value.trim();
-    if (!courseName) return;
+    // Auto-fill timestamp
+    const timestamp = new Date().toLocaleString();
+    timestampInput.value = timestamp;
 
-    // Collect checked days into a Set
-    const checkedDays = new Set(
-      Array.from(form.querySelectorAll('input[name="day"]:checked'))
-        .map((cb) => cb.value)
-    );
+    // Get form values
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const birthDate = document.getElementById("birthDate").value;
+    const terms = document.getElementById("terms").checked;
 
-    // Create new table row
-    const row = document.createElement("tr");
+    // Validation rules
+    if(fullName.length < 3) errors.push("Full Name must be at least 3 characters.");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Please enter a valid email address.");
+    if(!/^\+?\d{7,15}$/.test(phone)) errors.push("Phone number must contain 7-15 digits.");
+    if(!birthDate) errors.push("Birth Date is required.");
+    if(!terms) errors.push("You must accept the terms.");
 
-    // Course cell
-    const nameCell = document.createElement("td");
-    nameCell.textContent = courseName;
-    row.appendChild(nameCell);
+    // Show errors if any
+    if(errors.length > 0) {
+      errorDiv.innerHTML = errors.map(err => `<p style="color:red;">${err}</p>`).join("");
+      return;
+    }
 
-    // Day cells
-    dayOrder.forEach((day) => {
-      const cell = document.createElement("td");
-      cell.textContent = checkedDays.has(day) ? CHECK : CROSS;
-      cell.dataset.day = day;
-      cell.className = "day-cell";
-      row.appendChild(cell);
-    });
+    // Append new row
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td>${timestamp}</td>
+      <td>${fullName}</td>
+      <td>${email}</td>
+      <td>${phone}</td>
+      <td>${birthDate}</td>
+      <td>${terms ? "Yes" : "No"}</td>
+    `;
+    tableBody.appendChild(newRow);
 
-    table.appendChild(row);
-
-    // Reset form and focus
+    // Reset form
     form.reset();
-    courseInput.focus();
   });
 });

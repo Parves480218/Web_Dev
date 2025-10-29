@@ -3,23 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Weekly Timetable</title>
+  <title>Registration Page</title>
   <link rel="stylesheet" href="style.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </head>
 
 <body>
   <!--
-    Author: Parves Mosharof Imran
-    Date: 2025-10-15
+    Author: Ville Heikkiniemi
+    Date: 2025-10-06
   -->
 
   <header class="site-header">
-    <h1>Weekly Timetable</h1>
+    <h1>Registration Page</h1>
   </header>
 
   <main class="content">
-    <!-- Top row split into two blocks -->
     <div class="top-grid">
       <!-- Student info (30%) -->
       <section class="student-info" aria-label="Student information">
@@ -28,29 +27,53 @@
         <p><span class="student-group">AITS24P</span></p>
       </section>
 
-      <!-- Controls (70%): add course + day marks -->
-      <section class="controls" aria-label="Add course row">
-        <h2 class="controls-title">Add Course</h2>
+      <!-- Controls / Form (70%) -->
+      <section class="controls" aria-label="Registration Form">
+        <h2 class="controls-title">Register</h2>
 
         <form id="addCourseForm">
+          <!-- Hidden timestamp -->
+          <input type="hidden" id="timestamp" name="timestamp">
+
+          <!-- Full Name -->
           <div class="form-row">
-            <label for="courseName">Course name</label>
-            <input id="courseName" name="courseName" type="text" required placeholder="e.g., Web Development Basics">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Your full name">
           </div>
 
-          <fieldset class="days-group">
-            <legend>Days (yes = &#9989;, no = &#10060;)</legend>
-            <label><input type="checkbox" name="day" value="Mon"> Mon</label>
-            <label><input type="checkbox" name="day" value="Tue"> Tue</label>
-            <label><input type="checkbox" name="day" value="Wed"> Wed</label>
-            <label><input type="checkbox" name="day" value="Thu"> Thu</label>
-            <label><input type="checkbox" name="day" value="Fri"> Fri</label>
-          </fieldset>
-
+          <!-- Email -->
           <div class="form-row">
-            <button id="addRowBtn" type="submit" class="btn">Add row</button>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="example@mail.com">
+          </div>
+
+          <!-- Phone -->
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+358 401234567">
+          </div>
+
+          <!-- Birth Date -->
+          <div class="form-row">
+            <label for="birthDate">Birth Date</label>
+            <input id="birthDate" name="birthDate" type="date">
+          </div>
+
+          <!-- Terms -->
+          <div class="form-row">
+            <label>
+              <input type="checkbox" id="terms" name="terms"> I accept the terms
+            </label>
+          </div>
+
+          <!-- Buttons -->
+          <div class="form-row">
+            <button id="addRowBtn" type="submit" class="btn">Submit</button>
             <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
           </div>
+
+          <!-- Error messages -->
+          <div id="errorMessages"></div>
         </form>
       </section>
     </div>
@@ -60,20 +83,20 @@
       <table class="table" id="timetable">
         <thead>
           <tr>
-            <th>Course</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
+            <th>Timestamp</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Birth Date</th>
+            <th>Terms Accepted</th>
           </tr>
         </thead>
         <tbody>
+          <!-- Form submissions will appear here -->
         </tbody>
       </table>
     </div>
   </main>
-
 </body>
 
 </html>

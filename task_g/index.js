@@ -1,6 +1,6 @@
 // index.js
-// Author: Ville Heikkiniemi
-// Date: 2025-10-06
+// Author: Parves Mosharof Imran
+// Date: 2025-10-29
 // Handles registration form submission with validation
 
 document.addEventListener("DOMContentLoaded", () => {

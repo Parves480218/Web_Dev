@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+
+  <script src="index.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!--
+    Author: Ville Heikkiniemi
+    Date: 2025-10-06
+  -->
+
+  <header class="bg-blue-500 p-5 text-center text-2xl text-white">
+    <h1>Registration Page</h1>
+  </header>
+
+  <main class="bg-gray-100">
+    <!-- Flex container for Student info and Form -->
+    <div class="flex gap-6 p-2.5 ml-10 mr-10">
+      <!-- Student info (smaller) -->
+      <section class="flex-[1] bg-white p-2 border rounded-2xl shadow-2xl" aria-label="Student information">
+        <h2 class="mb-2 ml-0.5 font-bold">Information</h2>
+        <p><span class="student-name ml-0.5">Parves Mosharof Imran</span></p>
+        <p><span class="student-group ml-0.5">AITS24P</span></p>
+      </section>
+
+      <!-- Controls / Form (larger) -->
+      <section class="flex-[2] bg-white p-2 border rounded-2xl shadow-2xl" aria-label="Registration Form">
+        <h2 class="mb-2 ml-0.5 font-bold">Register</h2>
+
+        <form id="addCourseForm">
+          <!-- Hidden timestamp -->
+          <input type="hidden" id="timestamp" name="timestamp" />
+
+          <!-- Full Name -->
+          <div class="ml-0.5 form-row">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Your full name"
+              class="border border-black-300 rounded-md px-2 py-1 w-full" />
+          </div>
+
+          <!-- Email -->
+          <div class="ml-0.5 mb-1 mt-2.5 form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="example@mail.com"
+              class="border border-black-300 rounded-md px-2 py-1 w-full" />
+          </div>
+
+          <!-- Phone -->
+          <div class="ml-0.5 form-row">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+358 401234567"
+              class="border border-black-300 rounded-md px-2 py-1 w-full" />
+          </div>
+
+          <!-- Birth Date -->
+          <div class="ml-0.5 mt-3 form-row">
+            <label for="birthDate">Birth Date</label>
+            <input id="birthDate" name="birthDate" type="date"
+              class="border border-black-300 rounded-md px-2 py-1 w-full" />
+          </div>
+
+          <!-- Terms -->
+          <div class="ml-0.5 form-row">
+            <label> <input type="checkbox" id="terms" name="terms" /> I accept the terms </label>
+          </div>
+
+          <!-- Buttons -->
+          <div class="form-row mt-3 flex gap-2">
+            <button id="addRowBtn" type="submit"
+              class="border-2 p-1 font-medium rounded-md bg-amber-100">Submit</button>
+            <button id="clearBtn" type="reset" class="border-2 p-1 font-medium rounded-md bg-amber-100">Clear</button>
+          </div>
+
+          <!-- Error messages -->
+          <div id="errorMessages" class="text-red-600 mt-2"></div>
+        </form>
+      </section>
+    </div>
+
+    <!-- Table -->
+    <div class="border p-4 ml-10 mr-10 rounded-md overflow-auto mt-6">
+      <table class="w-full border-collapse" id = "timetable">
+        <thead>
+          <tr class="bg-blue-500 text-white border-b border-gray-300">
+            <th class="px-4 py-2 text-left font-semibold">Timestamp</th>
+            <th class="px-4 py-2 text-left font-semibold">Full Name</th>
+            <th class="px-4 py-2 text-left font-semibold">Email</th>
+            <th class="px-4 py-2 text-left font-semibold">Phone</th>
+            <th class="px-4 py-2 text-left font-semibold">Birth Date</th>
+            <th class="px-4 py-2 text-center font-semibold">Terms Accepted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Form submissions will appear here -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+
+</html>

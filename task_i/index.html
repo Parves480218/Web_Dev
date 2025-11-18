@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PaddleJoy — Kayak & Paddle Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-gray-800 font-sans bg-gray-100">
+
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-8 py-4 grid grid-cols-2 items-center">
+    <h1 class="text-2xl font-extrabold text-blue-900">PaddleJoy</h1>
+    <nav class="justify-self-end space-x-6">
+      <a href="#about" class="hover:text-teal-500 font-medium transition">About</a>
+      <a href="#products" class="hover:text-teal-500 font-medium transition">Rentals</a>
+      <a href="#features" class="hover:text-teal-500 font-medium transition">Why Us</a>
+    </nav>
+  </div>
+</header>
+
+<main class="grid gap-20">
+
+  <section class="relative min-h-screen max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 gap-12 items-center bg-gradient-to-r from-[#0077B6] to-[#00BFA6] rounded-xl shadow-lg overflow-hidden">
+    
+    <div class="space-y-6 z-10 relative">
+      <h2 class="text-5xl font-bold text-white drop-shadow-lg">Adventure Starts on the Water</h2>
+      <p class="text-lg text-white/90 drop-shadow-md">Feel the thrill of the water with PaddleJoy’s premium rentals — designed for adventure, excitement, and lasting memories.</p>
+      <a href="#products" class="inline-block bg-amber-100 text-[#3d3635] hover:bg-gray-300 px-6 py-3 rounded-lg font-semibold transition shadow-md">Start Your Adventure</a>
+    </div>
+    
+    <figure class="relative z-10">
+      <img src="img/main.jpg" alt="Kayaking on open water" class="rounded-xl shadow-lg w-full h-96 object-cover" />
+    </figure>
+
+    <div class="absolute inset-0">
+      <svg class="w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,160 C150,200 350,120 500,160 C650,200 850,120 1000,160 L1000,00 L0,0 Z" fill="rgba(255,255,255,0.1)"/>
+        <path d="M0,200 C200,240 400,160 600,200 C800,240 1000,160 1200,200 L1200,00 L0,0 Z" fill="rgba(255,255,255,0.08)"/>
+      </svg>
+    </div>
+    
+  </section>
+
+  <section id="about" class="max-w-7xl mx-auto px-8 py-16 bg-gray-50 rounded-xl">
+    <div class="grid place-items-center text-center gap-6">
+      <h3 class="text-3xl font-bold text-gray-800">About PaddleJoy</h3>
+      <p class="text-gray-600 text-lg max-w-3xl">
+        Experience the water like never before with PaddleJoy. Our mission is to make water adventures accessible, exciting, and safe for everyone. With expertly maintained kayaks, paddle boards, and safety-first guidance, we help you create unforgettable memories — one paddle at a time.
+      </p>
+    </div>
+  </section>
+
+  <section id="products" class="max-w-7xl mx-auto px-8 py-16 grid gap-12">
+    <h3 class="text-3xl font-bold text-center mb-10 text-gray-800">Featured Rentals</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <article class="bg-white rounded-xl shadow p-4 text-center hover:shadow-2xl transition">
+        <figure>
+          <img src="img/solo.jpg" alt="Single Kayak" class="rounded-lg mb-4 w-full h-64 object-cover" />
+        </figure>
+        <h4 class="text-xl font-semibold mb-2 text-gray-800">Solo Kayaks</h4>
+        <p class="text-gray-600">Stable, lightweight kayaks perfect for lakes and calm rivers.</p>
+      </article>
+
+      <article class="bg-white rounded-xl shadow p-4 text-center hover:shadow-2xl transition">
+        <figure>
+          <img src="img/tandem.jpg" alt="Tandem Kayak" class="rounded-lg mb-4 w-full h-64 object-cover" />
+        </figure>
+        <h4 class="text-xl font-semibold mb-2 text-gray-800">Tandem Kayaks</h4>
+        <p class="text-gray-600">Share the adventure with a partner in our spacious two-seaters.</p>
+      </article>
+
+      <article class="bg-white rounded-xl shadow p-4 text-center hover:shadow-2xl transition">
+        <figure>
+          <img src="img/stand.jpg" alt="Paddle Board" class="rounded-lg mb-4 w-full h-64 object-cover" />
+        </figure>
+        <h4 class="text-xl font-semibold mb-2 text-gray-800">Stand-Up Paddle Boards</h4>
+        <p class="text-gray-600">Great for balance, fitness, and exploring peaceful coastlines.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="features" class="max-w-7xl mx-auto px-8 py-16 bg-blue-50 rounded-xl">
+    <h3 class="text-3xl font-bold text-center mb-10 text-gray-800">Why Rent with PaddleJoy?</h3>
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Top-Quality Gear</h4>
+        <p class="text-gray-600">Regularly maintained, reliable, and beginner-friendly equipment.</p>
+      </div>
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Affordable Pricing</h4>
+        <p class="text-gray-600">Adventure should be accessible — our rentals fit every budget.</p>
+      </div>
+      <div>
+        <h4 class="text-xl font-semibold mb-2">Safety First</h4>
+        <p class="text-gray-600">Life jackets, tutorials, and guidance to keep you confident on the water.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-8 py-20 text-center bg-teal-100 rounded-xl">
+    <h3 class="text-3xl font-bold mb-4 text-gray-800">Ready to Paddle Out?</h3>
+    <p class="text-gray-700 mb-6 text-lg">
+      Discover breathtaking places and create lasting memories — all with the right gear.
+    </p>
+    <a href="#products" class="bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 transition">
+      See Full Catalog
+    </a>
+  </section>
+
+</main>
+
+<footer class="text-center py-6 text-gray-600 border-t mt-10">
+  © 2025 PaddleJoy — Kayak & Paddle Rentals
+</footer>
+
+</body>
+</html>
